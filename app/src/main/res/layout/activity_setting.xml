@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.thigiacmaytinh.CascadeDetector.MainActivity"
+    android:background="#ffffff">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/headerSetting"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#0565a3"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/back"
+            android:onClick="btnBack_onClick"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/textButtonWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@android:drawable/ic_notification_clear_all" />
+
+        <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btnBack"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/btnBack"
+            android:text="Cascade Detector - https://thigiacmaytinh.com"
+            android:textColor="#ffffff"
+            android:onClick="lblTitle_onClick"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/lblTitle"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:text="@string/lblSetting"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintTop_toBottomOf="@+id/lblTitle" />
+
+
+        <ImageView
+            android:id="@+id/btnInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="552dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@+id/lblTitle"
+            android:onClick="lblIntro_onClick"
+            android:src="@drawable/info"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/lblSelectFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Chọn file cascade"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/textColorBlack"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerSetting" />
+
+
+    <TextView
+        android:id="@+id/lblScaleFactor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblSelectFile"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="Scale factor"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/textColorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblSelectFile" />
+
+    <TextView
+        android:id="@+id/lblMinNeighbors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblScaleFactor"
+        android:layout_alignStart="@+id/lblScaleFactor"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="35dp"
+        android:text="Min neighbors"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/textColorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblScaleFactor" />
+
+    <TextView
+        android:id="@+id/lblMinSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblMinNeighbors"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="35dp"
+        android:text="Min size"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/textColorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblMinNeighbors" />
+
+    <TextView
+        android:id="@+id/lblMaxSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblMinSize"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="35dp"
+        android:text="Max size"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/textColorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblMinSize" />
+
+    <EditText
+        android:id="@+id/txtScaleFactor"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="18dp"
+        android:layout_toEndOf="@+id/lblScaleFactor"
+        android:inputType="number"
+        android:singleLine="false"
+        android:text="1.1"
+        app:layout_constraintStart_toEndOf="@+id/lblScaleFactor"
+        app:layout_constraintTop_toBottomOf="@+id/lblSelectFile" />
+
+    <EditText
+        android:id="@+id/txtMinNeighbors"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/lblScaleFactor"
+        android:ems="10"
+        android:inputType="number"
+        android:text="3"
+        app:layout_constraintStart_toEndOf="@+id/lblMinNeighbors"
+        app:layout_constraintTop_toBottomOf="@+id/txtScaleFactor" />
+
+    <EditText
+        android:id="@+id/txtMinSize"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/lblScaleFactor"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/lblMinSize"
+        app:layout_constraintTop_toBottomOf="@+id/txtMinNeighbors" />
+
+    <EditText
+        android:id="@+id/txtMaxSize"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/lblMaxSize"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/lblMaxSize"
+        app:layout_constraintTop_toBottomOf="@+id/txtMinSize" />
+
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/modern_button"
+        android:onClick="btnReset_onClick"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:text="Reset default"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/textButtonWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMaxSize" />
+
+    <Spinner
+        android:id="@+id/cbCascade"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toEndOf="@+id/lblSelectFile"
+        app:layout_constraintTop_toBottomOf="@+id/headerSetting" />
+
+</android.support.constraint.ConstraintLayout>
